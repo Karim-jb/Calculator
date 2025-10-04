@@ -33,22 +33,23 @@ export default function Calculator() {
 
   const [screen, setScreen] = useState("");
 
-  const[Ele,setEle] = useState('')
-
   useEffect(() => {
     setTimeout(() => setIsLoading(false), 1500);
   }, []);
 
   function handelMath(ele) {
     if(SatateOperators == ele){
-     setOperators(ele);
+      if(Sum)
+    setOldNb(Sum)
+    setOperators(ele);
+    setScreen(ele);
+    setValues('')
     }
     else{
     setOldNb(values);
     setOperators(ele);
     setScreen(ele);
     setValues("");
-    setEle(true);
     }
     console.log('ele is:'+ele)
   }
@@ -60,7 +61,6 @@ export default function Calculator() {
       setOldNb("");
       setSum("");
       setOperators('')
-      setEle(false)
     } else if (ele == "=") {
       if (SatateOperators == "+") {
         let sum = Number(values) + Number(oldNb);
@@ -82,16 +82,30 @@ export default function Calculator() {
         }
       } else if (SatateOperators == "x") {
         let sum = Number(values) * Number(oldNb);
-        setSum(sum);
-        setValues(sum);
-        setOldNb("");
-        setOperators("");
+         if (Number(oldNb) * Number(values) == 0) {
+          setSum("0");
+          setValues("0");
+          setOldNb("");
+          setOperators("");
+        } else {
+          setSum(sum);
+          setValues(sum);
+          setOldNb("");
+          setOperators("");
+        }
       } else if (SatateOperators == "/") {
-        let sum = Number(oldNb) / Number(values);
-        setSum(sum);
-        setValues(sum);
-        setOldNb("");
-        setOperators("");
+        let sum = Number(values) * Number(oldNb);
+          if (Number(oldNb) / Number(values) == 0) {
+          setSum("0");
+          setValues("kalb?");
+          setOldNb("");
+          setOperators("");
+        } else {
+          setSum(sum);
+          setValues(sum);
+          setOldNb("");
+          setOperators("");
+        }
       }
     }
   }
