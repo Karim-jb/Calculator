@@ -70,6 +70,7 @@
 @media  screen and (max-width:412px) {
    .calculator{
     width: 300px;
+
    }
    .btns-flex button{
     width: 18%;
@@ -78,6 +79,7 @@
    }
    .screen{
     height: 70px;
+    overflow: hidden;
    }
    .center{
     font-size: 30px;

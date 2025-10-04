@@ -33,23 +33,34 @@ export default function Calculator() {
 
   const [screen, setScreen] = useState("");
 
+  const[Ele,setEle] = useState('')
+
   useEffect(() => {
     setTimeout(() => setIsLoading(false), 1500);
   }, []);
 
   function handelMath(ele) {
+    if(SatateOperators == ele){
+     setOperators(ele);
+    }
+    else{
     setOldNb(values);
     setOperators(ele);
     setScreen(ele);
     setValues("");
+    setEle(true);
+    }
+    console.log('ele is:'+ele)
   }
+  console.log('the state operator is:'+SatateOperators)
 
   function handelOperator(ele) {
     if (ele == "AC") {
       setValues("0");
       setOldNb("");
-      setNewNb("");
       setSum("");
+      setOperators('')
+      setEle(false)
     } else if (ele == "=") {
       if (SatateOperators == "+") {
         let sum = Number(values) + Number(oldNb);
