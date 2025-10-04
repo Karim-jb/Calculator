@@ -97,7 +97,7 @@ export default function Calculator() {
         </div>
       ) : (
         <div className="center">
-         < h1 style={{textAlign:"center",fontFamily:"fantasy",fontSize:'50px' }}>classic one expression calculator</h1>
+         < h1 style={{textAlign:"center",fontFamily:"fantasy",fontSize:'40px' }}>classic one expression calculator</h1>
           <div className="calculator">
             <div className="screen">{values ? values : screen}</div>
             <div className="btns-flex">

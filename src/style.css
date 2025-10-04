@@ -66,3 +66,21 @@
     background-color: rgb(255, 255, 255);
     color: rgb(14, 13, 13);
 }
+
+@media  screen and (max-width:412px) {
+   .calculator{
+    width: 300px;
+   }
+   .btns-flex button{
+    width: 18%;
+    font-size: 35px;
+    text-align: center;
+   }
+   .screen{
+    height: 70px;
+   }
+   .center{
+    font-size: 30px;
+    gap: 50px;
+   }
+}
