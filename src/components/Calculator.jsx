@@ -94,7 +94,7 @@ export default function Calculator() {
           setOperators("");
         }
       } else if (SatateOperators == "/") {
-        let sum = Number(values) * Number(oldNb);
+        let sum = Number(values) / Number(oldNb);
           if (Number(oldNb) / Number(values) == 0) {
           setSum("0");
           setValues("kalb?");
